@@ -27,9 +27,203 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class WebApplication {
+    // 함수 작성 예시
+	static void 함수() {
+		System.out.println("안녕");
+	}
+
 	// 프로젝트 "web" 시작시 프로그램 시작 지점 (main 메서드)
 	public static void main(String[] args) {
 		SpringApplication.run(WebApplication.class, args);    // Spring boot로 만든 웹서버 띄우기
-	}
 
+		// var test = new Test();
+		Test test = new Test();
+		test.name = "dsfsd";
+		System.out.println(test.name);
+		test.hello();
+
+		var friend1 = new Friend("kim");
+		var friend2 = new Friend("park");
+		var friend3 = new Friend("lee");
+		System.out.println(friend1.name);
+		System.out.println(friend2.name);
+		System.out.println(friend3.name);
+
+		// 함수();
+		// String name = "kim";
+		// int age = 20;
+		// double num = 1.5;
+
+		// String lover = "김말자";
+		// System.out.println(lover);
+
+		// var name = "kim";
+		// var age = 20;
+
+		// final int wifeCount = 0;
+		// wifeCount = 20; //에러남
+		// System.out.println(wifeCount);
+
+		// if (조건) {
+		// 	조건이 참일 때 실행할 코드~~
+		// }
+
+		// int wifeCount = 0;
+
+		// if (wifeCount == 0) {
+		// 	System.out.println("정상");
+		// }
+
+		// for (int i = 0; i < 3; i++) {
+		// 	복붙할 코드~~
+		// }
+	}
 }
+
+class Test {
+  String name = "kim";   // 클래스 안에 있는 변수는 field / attribute 라고 부름.
+  void hello() {   // 클래스 안에 있는 함수는 method라고 부름.
+	  System.out.println("안녕");
+  }
+}
+
+class Friend {
+	String name;  // 클래스 안에 있는 변수는 field / attribute 라고 부름.
+	int age = 20;
+	Friend(String 이름) { // 생성자(constructor) Friend() - object(인스턴스)를 하나 만들 때(new Friend();) 자동으로 실행
+	    this.name = 이름;   // this는 새로 생성될 object(인스턴스)를 뜻합니다.
+	}
+}
+
+
+// TODO: 아래와 같은 오류 메시지 출력시 오류 원인은 "Dependency requires at least JVM runtime version 17. This build uses a Java 16 JVM." 이다.
+//       해당 오류 원인은 즉, 현재 Java 16을 사용하고 있는데, spring-boot-gradle-plugin:3.4.7 은 최소 Java 17 이상이 필요하다는 의미이다.
+//       하여 아래와 같은 2가지 방법을 진행하여 오류를 해결한다. (2025.07.10 minjae)
+// 1. Java 24 이상 설치
+//    Java 24 또는 그 이상 버전을 설치합니다.
+//    Adoptium에서 OpenJDK 24 다운로드 가능
+//
+// 2. JAVA_HOME 환경변수 변경
+//    Java 24로 설정되었는지 확인 및 설정:
+// (예) 변수 이름 - JAVA_HOME / 변수 값 - C:\Users\bhjeon\.jdks\openjdk-24.0.1
+// 참고 URL - https://chatgpt.com/c/686f03e4-33d0-8010-862f-03608e1e4ea3
+
+// 오류 메시지
+//A problem occurred configuring root project 'shop'.
+//		> Could not resolve all artifacts for configuration 'classpath'.
+//		> Could not resolve org.springframework.boot:spring-boot-gradle-plugin:3.4.7.
+//Required by:
+//root project : > org.springframework.boot:org.springframework.boot.gradle.plugin:3.4.7
+//		> Dependency requires at least JVM runtime version 17. This build uses a Java 16 JVM.
+//
+//* Try:
+//		> Run this build using a Java 17 or newer JVM.
+//> Run with --stacktrace option to get the stack trace.
+//> Run with --info or --debug option to get more log output.
+//> Run with --scan to get full insights.
+//> Get more help at https://help.gradle.org.
+//Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+//You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+//For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+
+
+// * intellij community 에디터 설치 방법
+// 참고 URL - https://blog.naver.com/PostView.naver?blogId=djusti&logNo=223143383341
+// 참고 2 URL - https://priming.tistory.com/50
+
+// * spring initializr 이용하여 프로젝트 생성
+// 참고 URL - https://start.spring.io/
+// 참고 2 URL - https://guns23.tistory.com/8
+
+// 코드 수정 후 재컴파일 키보드 단축키 Ctrl + F9
+// 디버그 터미널 출력창 키보드 단축키 Alt + 4 / Alt + 5 둘 중 하나 입력
+
+// *** 자바 공식문서 읽는 방법 ***
+//참고 URL - https://opentutorials.org/course/3930/26665
+//참고 2 URL - https://doodreamcode.tistory.com/115
+//참고 3 URL - https://isaac-christian.tistory.com/entry/Java-official-document-%ED%99%9C%EC%9A%A9
+
+// 자바 공식문서 웹사이트 목록
+// 참고 URL - https://velog.io/@dev-mage/java-official-documents-list
+//Java Documentation
+//참고 URL - Java Platform, Standard Edition Documentation - Releases
+//		  https://docs.oracle.com/en/java/javase/index.html
+
+//Java 업데이트 정리
+//참고 URL - Java Language Updates
+//		https://docs.oracle.com/en/java/javase/18/language/java-language-changes.html#GUID-6459681C-6881-45D8-B0DB-395D1BD6DB9B
+
+//Java 언어, JVM 명세
+//참고 URL - Java SE Specifications
+//		https://docs.oracle.com/javase/specs/
+
+//	- Java 18(최신) JVM 개요
+//	참고 URL - Java Virtual Machine Guide
+//			https://docs.oracle.com/en/java/javase/18/vm/java-virtual-machine-technology-overview.html
+
+//JDK 릴리즈 노트
+//참고 URL - JDK Release Notes
+//		https://www.oracle.com/java/technologies/javase/jdk-relnotes-index.html
+
+//	- JDK 18 도구 명세
+//	참고 URL - Java Development Kit Version 18 Tool Specifications
+//			https://docs.oracle.com/en/java/javase/18/docs/specs/man/index.html
+
+//	- Modular JDK(Project Jigsaw: 직소 프로젝트) - Java 9에서 도입된 모듈화 시스템
+//	참고 URL - Project Jigsaw
+//			https://openjdk.org/projects/jigsaw/
+
+//*** Java API 명세 ***
+//	- Java 8
+//	참고 URL - Java Platform SE 8
+//		https://docs.oracle.com/javase/8/docs/api/
+//
+//	- Java 19(최신)
+//	참고 URL - Overview (Java SE 19 & JDK 19 [build 6])
+//		https://download.java.net/java/early_access/loom/docs/api/
+
+//Java 개발자 센터
+//참고 URL - Dev.java: The Destination for Java Developers
+//		https://dev.java/
+
+//Java 튜토리얼
+//참고 URL - Learn Java - Dev.java
+//		https://dev.java/learn/
+
+//Java 플랫폼 개요
+//참고 URL - Java™ Platform Overview
+//		https://docs.oracle.com/javase/8/docs/technotes/guides/index.html#langutil
+
+//Java 튜토리얼(Java 8을 기준으로 제작됨)
+//참고 URL - The Java™ Tutorials
+//		https://docs.oracle.com/javase/tutorial/index.html
+
+//Java 소개
+//	간략 소개
+//	참고 URL - About the Java Technology
+//		https://docs.oracle.com/javase/tutorial/getStarted/intro/definition.html
+//
+//	1996년에 발표된 공식 보고서 - 첫 출시 즈음이라 그런지 C, C++과 비교하여 작성된 내용이 많음
+//	참고 URL - The Java Language Environment: Contents
+//		https://www.oracle.com/java/technologies/language-environment.html
+//
+//	Java 공식 보고서 목록
+//	참고 URL - Java SE Reference White Papers
+//		https://www.oracle.com/java/technologies/javase/javase-whitepapers.html
+
+//Java 필수 개념 소개
+//참고 URL - Trail: Learning the Java Language
+//		https://docs.oracle.com/javase/tutorial/java/index.html
+//
+//Java 8 개발자 가이드
+//참고 URL - Java Platform Standard Edition 8 Documentation
+//		https://docs.oracle.com/javase/8/docs/
+
+//Java 8 도구와 유틸리티 설명
+//참고 URL - JDK Development Tools
+//		https://docs.oracle.com/javase/8/docs/technotes/tools/index.html#general
+
+//Java 8 런처(JDK의 java 실행 파일)가 실행되는 간략한 과정
+//참고 URL - How Classes are Found
+//		https://docs.oracle.com/javase/8/docs/technotes/tools/findingclasses.html
