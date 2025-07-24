@@ -9,13 +9,18 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+// 용어 정리
+// API - 어떤 프로그램의 사용법
+// 웹서버 API - 어떤 웹서버 프로그램의 사용법
+// '컨트롤러'(@Controller) 역할 - 유저의 요청을 @Controller가 사용된 클래스 안에 구현된 여기저기 Rest API로 안내하는 역할
+
 // @Controller만 잘 붙이면 WebApplication.java -> main 함수에 안넣어도 알아서 제때 BasicController 잘 실행 해준다.
 @Controller   // @Controller 사용하면 springframework가 알아서 아래 코드(public class BasicController { ... }) 가져와서 ShopApplication 클래스 main 함수에 집어 넣어서 아래 웹서버 코드 실행
 public class BasicController {
     // 여기서 웹서버기능 제작가능
 
     // 웹서버 API - 테스트 웹페이지("/test")
-    @GetMapping("/test")
+    @GetMapping("/test")  // Method - @GetMapping URL - "/test"
     // @ResponseBody   // html 파일("test/test.html)을 유저 웹브라우저로 전송하고 싶으면 @ResponseBody를 빼줘야 함.
     String test() {
         // Thymeleaf 문법(Thymeleaf 템플릿 엔진 외부 라이브러리 설치해야 사용 가능한 문법.)을 사용하고 싶으면
@@ -27,6 +32,7 @@ public class BasicController {
     }
 
     // 웹서버 API - 메인 웹페이지("/")
+    // Method - @GetMapping URL - "/"
     @GetMapping("/")   // 1. 메인 웹페이지 URL("/")로 HTTP - GET method 요청(접속) 날리면
     // @ResponseBody   // html 파일(index.html)을 유저 웹브라우저로 전송하고 싶으면 @ResponseBody를 빼줘야 함.
     String hello() {
@@ -39,6 +45,7 @@ public class BasicController {
     }
 
     // 웹서버 API - 메인 웹페이지("/")
+    // Method - @GetMapping URL - "/"
     // @GetMapping("/")   // 1. 메인 웹페이지 URL("/")로 HTTP - GET method 요청(접속) 날리면
     // @ResponseBody   // 메서드 hello 몸체 안 return문 오른쪽에 있는 문자열(간단한 문자 말고 html 코드 "<h4>안녕하쇼</h4>") 그대로 유저에게 전송
     // String hello() {
@@ -46,6 +53,7 @@ public class BasicController {
     // }
 
     // 웹서버 API - 메인 웹페이지("/")
+    // Method - @GetMapping URL - "/"
     // @GetMapping("/")   // 1. 메인 웹페이지 URL("/")로 HTTP - GET method 요청(접속) 날리면
     // @ResponseBody   // 메서드 hello 몸체 안 return문 오른쪽에 있는 문자열("안녕하쇼") 그대로 유저에게 전송
     // String hello() {
@@ -53,6 +61,7 @@ public class BasicController {
     // }
 
     // 웹서버 API - 피싱사이트 소개글 웹페이지("/about")
+    // Method - @GetMapping URL - "/about"
     @GetMapping("/about")   // 1. 피싱사이트 소개글 웹페이지("/about")로 HTTP - GET method 요청(접속) 날리면
     @ResponseBody  // 메서드 about 몸체 안 return문 오른쪽에 있는 문자열("피싱사이트에요") 그대로 유저에게 전송
     String about() {
@@ -60,6 +69,7 @@ public class BasicController {
     }
 
     // 웹서버 API - 마이페이지 소개글 웹페이지("/mypage")
+    // Method - @GetMapping URL - "/mypage"
     @GetMapping("mypage")   // 1. 마이페이지 소개글 웹페이지("/mypage")로 HTTP - GET method 요청(접속) 날리면
     @ResponseBody   // 메서드 mypage 몸체 안 return문 오른쪽에 있는 문자열("마이페이지입니다") 그대로 유저에게 전송
     String mypage() {
@@ -70,6 +80,9 @@ public class BasicController {
     // 누가 /date 로 접속하면 현재 날짜와 시간을 보내주는 기능을 만들어봅시다.
     // http://localhost:8080/date로 접속시 날짜와 시간이 대충 아무렇게나 보이면 성공입니다.
     // 굳이 HTML 말고 날짜 데이터만 보내줘도 됩니다.
+
+    // 웹서버 API - 현재 날짜와 시간 구하기 웹페이지("/date")
+    // Method - @GetMapping URL - "/date"
     @GetMapping("/date")
     @ResponseBody   // 메서드 date 몸체 안 return문 오른쪽에 있는 문자열(현재 날짜와 시간 - ZonedDateTime.now().toString()) 그대로 유저에게 전송
     String date() {
@@ -91,6 +104,7 @@ public class BasicController {
     }
 
     // 웹서버 API 작성 예시
+    // Method - @GetMapping URL - "/경로"
     // @GetMapping("/경로")   // @GetMapping() 안에 웹페이지 경로("/경로") 적기
     // @ResponseBody
     // String hello() {
