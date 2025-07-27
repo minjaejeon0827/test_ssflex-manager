@@ -1,4 +1,4 @@
-package com.test_humanwares.web;
+package com.test_humanwares.web;   // 파일 상단에 package 파일경로;(com 폴더 -> test_humanwares 폴더 -> web 폴더) 라고 적어줘야 다른 파일에서도 여기 있던 코드를 사용가능하다.
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,6 +26,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //      다른 사람들이 포트(Port) 8080으로 접속해면 내 컴퓨터에서 웹페이지 보내주면 그게 웹서버이다.
 
 @SpringBootApplication
+// 접근 제어자 "public" 없으면 같은 폴더(패키지) 안에서만 해당 클래스 사용가능
+// 접근 제어자 "public" 붙이면 다른 폴더(패키지) 에서도 해당 클래스 사용 가능
 public class WebApplication {
     // 함수 작성 예시
 	static void 함수() {
@@ -80,6 +82,8 @@ public class WebApplication {
 	}
 }
 
+// 접근 제어자 "public" 없으면 같은 폴더(패키지) 안에서만 해당 클래스 사용가능
+// 접근 제어자 "public" 붙이면 다른 폴더(패키지) 에서도 해당 클래스 사용 가능
 class Test {
   String name = "kim";   // 클래스 안에 있는 변수는 field / attribute 라고 부름.
   void hello() {   // 클래스 안에 있는 함수는 method라고 부름.
@@ -87,6 +91,8 @@ class Test {
   }
 }
 
+// 접근 제어자 "public" 없으면 같은 폴더(패키지) 안에서만 해당 클래스 사용가능
+// 접근 제어자 "public" 붙이면 다른 폴더(패키지) 에서도 해당 클래스 사용 가능
 class Friend {
 	String name;  // 클래스 안에 있는 변수는 field / attribute 라고 부름.
 	int age = 20;

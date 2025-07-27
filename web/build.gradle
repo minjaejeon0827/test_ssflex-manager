@@ -4,6 +4,9 @@
 // 2. 라이브러리 설치 및 관리
 // 3. 테스트 돌리기
 
+// thymeleaf 템플릿 엔진 역할?
+// thymeleaf 템플릿 엔진은 웹서버의 데이터를 html에 집어넣어주는걸 도와주는 외부 라이브러리이다.
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.5.3'
@@ -15,8 +18,13 @@ version = '0.0.1-SNAPSHOT'      // 프로젝트 버전
 
 java {
 	sourceCompatibility = '24'
+
 //	toolchain {
-//		languageVersion = JavaLanguageVersion.of(17)
+//		// TODO: JDK 버전(languageVersion) (기존) JavaLanguageVersion.of(17) -> (변경) JavaLanguageVersion.of(24) 구현 (2025.07.17 minjae)
+//		// 참고 URL - https://chatgpt.com/c/687851fa-fb58-8010-aba9-0f5b9f49f122
+//		// 참고 2 URL - https://chatgpt.com/c/68784c26-e758-8010-a50e-d4e6a77cdfe6
+////		languageVersion = JavaLanguageVersion.of(17)   // 코드짤 때 사용할 자바 버전(프로젝트 컴파일 시 사용할 JDK 버전(jdk17) (Gradle이 자동 설치 가능))
+//		languageVersion = JavaLanguageVersion.of(24)   // 코드짤 때 사용할 자바 버전(프로젝트 컴파일 시 사용할 JDK 버전(openjdk-24.0.1) (Gradle이 자동 설치 가능))
 //	}
 }
 

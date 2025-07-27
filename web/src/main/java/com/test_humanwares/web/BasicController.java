@@ -1,4 +1,4 @@
-package com.test_humanwares.web;
+package com.test_humanwares.web;   // 파일 상단에 package 파일경로;(com 폴더 -> test_humanwares 폴더 -> web 폴더) 라고 적어줘야 다른 파일에서도 여기 있던 코드를 사용가능하다.
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +16,14 @@ import java.util.Date;
 
 // @Controller만 잘 붙이면 WebApplication.java -> main 함수에 안넣어도 알아서 제때 BasicController 잘 실행 해준다.
 @Controller   // @Controller 사용하면 springframework가 알아서 아래 코드(public class BasicController { ... }) 가져와서 ShopApplication 클래스 main 함수에 집어 넣어서 아래 웹서버 코드 실행
+// 접근 제어자 "public" 없으면 같은 폴더(패키지) 안에서만 해당 클래스 사용가능
+// 접근 제어자 "public" 붙이면 다른 폴더(패키지) 에서도 해당 클래스 사용 가능
 public class BasicController {
     // 여기서 웹서버기능 제작가능
 
     // 웹서버 API - 테스트 웹페이지("/test")
     @GetMapping("/test")  // Method - @GetMapping URL - "/test"
-    // @ResponseBody   // html 파일("test/test.html)을 유저 웹브라우저로 전송하고 싶으면 @ResponseBody를 빼줘야 함.
+    // @ResponseBody   // html 파일("test/test.html")을 유저 웹브라우저로 전송하고 싶으면 @ResponseBody를 빼줘야 함.
     String test() {
         // Thymeleaf 문법(Thymeleaf 템플릿 엔진 외부 라이브러리 설치해야 사용 가능한 문법.)을 사용하고 싶으면
         // index.html 기본 상위 폴더 경로를
