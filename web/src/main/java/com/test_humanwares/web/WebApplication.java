@@ -3,6 +3,13 @@ package com.test_humanwares.web;   // 파일 상단에 package 파일경로;(com
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// * Microsoft Azure Cloud
+// 데이터베이스 MySQL
+// DB 접속용
+// Host URL 주소: testssflexmanagermysql0827.mysql.database.azure.com
+// 아이디: testssflexmanager
+// 비번: qwer1234!
+
 // * intellij community 에디터 설치 방법
 // 참고 URL - https://blog.naver.com/PostView.naver?blogId=djusti&logNo=223143383341
 // 참고 2 URL - https://priming.tistory.com/50

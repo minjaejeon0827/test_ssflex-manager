@@ -25,6 +25,12 @@ public class BasicController {
     @GetMapping("/test")  // Method - @GetMapping URL - "/test"
     // @ResponseBody   // html 파일("test/test.html")을 유저 웹브라우저로 전송하고 싶으면 @ResponseBody를 빼줘야 함.
     String test() {
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         // Thymeleaf 문법(Thymeleaf 템플릿 엔진 외부 라이브러리 설치해야 사용 가능한 문법.)을 사용하고 싶으면
         // index.html 기본 상위 폴더 경로를
         // (기존) static 폴더
@@ -38,6 +44,11 @@ public class BasicController {
     @GetMapping("/")   // 1. 메인 웹페이지 URL("/")로 HTTP - GET method 요청(접속) 날리면
     // @ResponseBody   // html 파일(index.html)을 유저 웹브라우저로 전송하고 싶으면 @ResponseBody를 빼줘야 함.
     String hello() {
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // Thymeleaf 문법(Thymeleaf 템플릿 엔진 외부 라이브러리 설치해야 사용 가능한 문법.)을 사용하고 싶으면
         // index.html 기본 상위 폴더 경로를
         // (기존) static 폴더
@@ -50,23 +61,39 @@ public class BasicController {
     // Method - @GetMapping URL - "/"
     // @GetMapping("/")   // 1. 메인 웹페이지 URL("/")로 HTTP - GET method 요청(접속) 날리면
     // @ResponseBody   // 메서드 hello 몸체 안 return문 오른쪽에 있는 문자열(간단한 문자 말고 html 코드 "<h4>안녕하쇼</h4>") 그대로 유저에게 전송
-    // String hello() {
-    //    return "<h4>안녕하쇼</h4>";   // 2. 이제 메인 웹페이지 URL("/")로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)(간단한 문자 말고 html 코드 "<h4>안녕하쇼</h4>")를 보내준다.
-    // }
+//    String hello() {
+//        try {
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return "<h4>안녕하쇼</h4>";   // 2. 이제 메인 웹페이지 URL("/")로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)(간단한 문자 말고 html 코드 "<h4>안녕하쇼</h4>")를 보내준다.
+//    }
 
     // 웹서버 API - 메인 웹페이지("/")
     // Method - @GetMapping URL - "/"
     // @GetMapping("/")   // 1. 메인 웹페이지 URL("/")로 HTTP - GET method 요청(접속) 날리면
     // @ResponseBody   // 메서드 hello 몸체 안 return문 오른쪽에 있는 문자열("안녕하쇼") 그대로 유저에게 전송
-    // String hello() {
-    //    return "안녕하쇼";   // 2. 이제 메인 웹페이지 URL("/")로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)("안녕하쇼")를 보내준다.
-    // }
+//    String hello() {
+//        try {
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return "안녕하쇼";   // 2. 이제 메인 웹페이지 URL("/")로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)("안녕하쇼")를 보내준다.
+//    }
 
     // 웹서버 API - 피싱사이트 소개글 웹페이지("/about")
     // Method - @GetMapping URL - "/about"
     @GetMapping("/about")   // 1. 피싱사이트 소개글 웹페이지("/about")로 HTTP - GET method 요청(접속) 날리면
     @ResponseBody  // 메서드 about 몸체 안 return문 오른쪽에 있는 문자열("피싱사이트에요") 그대로 유저에게 전송
     String about() {
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return "피싱사이트에요";   // 2. 피싱사이트 소개글 웹페이지("/about")로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)("피싱사이트에요")를 보내준다.
     }
 
@@ -75,6 +102,12 @@ public class BasicController {
     @GetMapping("mypage")   // 1. 마이페이지 소개글 웹페이지("/mypage")로 HTTP - GET method 요청(접속) 날리면
     @ResponseBody   // 메서드 mypage 몸체 안 return문 오른쪽에 있는 문자열("마이페이지입니다") 그대로 유저에게 전송
     String mypage() {
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return "마이페이지입니다";   // 2. 마이페이지 소개글 웹페이지("/mypage")로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)("마이페이지입니다")를 보내준다.
     }
 
@@ -88,6 +121,12 @@ public class BasicController {
     @GetMapping("/date")
     @ResponseBody   // 메서드 date 몸체 안 return문 오른쪽에 있는 문자열(현재 날짜와 시간 - ZonedDateTime.now().toString()) 그대로 유저에게 전송
     String date() {
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         // 현재 날짜와 시간 구하기
         // return LocalDateTime.now().toString();
         return ZonedDateTime.now().toString();
@@ -109,7 +148,12 @@ public class BasicController {
     // Method - @GetMapping URL - "/경로"
     // @GetMapping("/경로")   // @GetMapping() 안에 웹페이지 경로("/경로") 적기
     // @ResponseBody
-    // String hello() {
-    //     return "유저에게 보내줄데이터"; // 이제 "/경로"로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)("유저에게 보내줄데이터")를 보내준다.
-    // }
+//    String hello() {
+//        try {
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return "유저에게 보내줄데이터"; // 이제 "/경로"로 유저가 웹페이지 방문했을 때 유저에게 그 데이터(메세지)("유저에게 보내줄데이터")를 보내준다.
+//    }
 } 
