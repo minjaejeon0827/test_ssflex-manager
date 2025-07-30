@@ -10,6 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // 아이디: testssflexmanager
 // 비번: qwer1234!
 
+// * DBeaver 설치 방법
+// 유튜브 참고 URL - https://youtu.be/7YEd8ECUTAk?si=Se90Wik0TuTMoX1w
+
 // * intellij community 에디터 설치 방법
 // 참고 URL - https://blog.naver.com/PostView.naver?blogId=djusti&logNo=223143383341
 // 참고 2 URL - https://priming.tistory.com/50
