@@ -35,6 +35,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // (예) 내 컴퓨터에 다른 사람들이 접속할 수 있게 포트(Port) 8080 만들어 놓고
 //      다른 사람들이 포트(Port) 8080으로 접속해면 내 컴퓨터에서 웹페이지 보내주면 그게 웹서버이다.
 
+//
+
 @SpringBootApplication
 // 접근 제어자 "public" 없으면 같은 폴더(패키지) 안에서만 해당 클래스 사용가능
 // 접근 제어자 "public" 붙이면 다른 폴더(패키지) 에서도 해당 클래스 사용 가능

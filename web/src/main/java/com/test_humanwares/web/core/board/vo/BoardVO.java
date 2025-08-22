@@ -1,5 +1,6 @@
 package com.test_humanwares.web.core.board.vo;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -8,9 +9,18 @@ import java.io.Serializable;
 import java.util.List;
 
 // TODO: JPA(ORM) 라이브러리 - @Entity 사용해서 자바 class "BoardVO" 생성 및 해당 클래스 사용해서 MySQL DB에도 DB 테이블이 자동생성 되도록 구현 (2025.08.08 minjae)
+// TODO: 아래 오류 메시지 출력으로 인해 클래스 BoardVO에 @Entity 추가 (2025.08.22 minjae)
+// 오류 메시지: Not a managed type: class com.test_humanwares.web.core.board.vo.BoardVO
+// 참고 URL - https://claude.ai/chat/dbf56b0d-2c1a-40e5-a51f-e186a65ad35b
+//@Entity
+//public class BoardVO {
+//}
+
+// TODO: 아래 오류 메시지 출력으로 인해 추후 클래스 BoardVO에 @Entity, @Id 추가 필요 (2025.08.22 minjae)
+// 오류 메시지: Entity 'com.test_humanwares.web.core.board.vo.BoardVO' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+// 참고 URL - https://claude.ai/chat/66418874-51f9-45b0-8f40-6df73b06d4ec
 public class BoardVO {
 }
-
 
 // TODO: 필요시 아래 상상플렉스 소스코드 참고 (2025.08.08 minjae)
 //package com.humanwares.web.core.board.vo;
@@ -82,13 +92,13 @@ public class BoardVO {
 //    @Transient
 //    String contentHtml;
 //
-//    @Column(nullable = false)
+//    @Column(nullable = false)   // 이러면 이 컬럼에 데이터가 비어있을 경우 저장을 막아준다.
 //    Boolean isUse = true;
 //
-//    @Column(nullable = false)
+//    @Column(nullable = false)   // 이러면 이 컬럼에 데이터가 비어있을 경우 저장을 막아준다.
 //    Boolean isNotice = false;
 //
-//    @Column(nullable = false)
+//    @Column(nullable = false)   // 이러면 이 컬럼에 데이터가 비어있을 경우 저장을 막아준다.
 //    Boolean isSecret = false;
 //
 //    String regIp;
